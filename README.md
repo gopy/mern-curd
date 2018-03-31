@@ -1,4 +1,4 @@
-# mern-curd
+# Mern Curd
 Mongo Express React Node
 
 ### 1. Install the all dependencies for Express & React(client)
