@@ -3,7 +3,7 @@ Mongo Express React Node
 
 ### 1. Install the all dependencies for Express & React(client)
 
-cd <Root-Folder> && npm install && cd client && npm install && cd.. && npm start
+cd Root-Folder && npm install && cd client && npm install && cd.. && npm start
 
 #### Edit the mern-curd/index.js
     
