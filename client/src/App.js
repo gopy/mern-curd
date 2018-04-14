@@ -5,57 +5,42 @@ import React, { Component } from 'react';
 
 class App extends Component {
  constructor(props) {
-	 super(props);
-	 this.state = { members: [] ,name: '',age: '',nationality: '' ,editing: 'Submit' ,editid: ''};
+	super(props);
+	this.state = { members: [] ,name: '',age: '',nationality: '' ,editing: 'Submit' ,editid: ''};
 	 
-	 this.handleChange = this.handleChange.bind(this);
+	this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-	
-	
 	 
-	
 	this.deleteRow = (i)=> {
-		   //console.log(i);
-			return fetch('people/'+i, {
-				method: 'DELETE',
-			}) .then(
-				 
-				fetch("/people").then( (response) => {
-					return response.json() })   
-						.then( (json) => {
-							this.setState({members: json});
-							console.log(json);
-						})
-				 
-			);
+		return fetch('people/'+i,{
+			method: 'DELETE',
+		}).then(
+			fetch("/people").then( (response) => {
+				return response.json() }).then( (json) => {
+						this.setState({members: json});
+						console.log(json);
+			}) 
+		);
 	 }
 	 
 	 
 	 this.editRow = (i)=> {
-		    console.log(i);
-			fetch("/peoplefind/"+i)
-            .then( (response) => {
-                return response.json() })   
-                    .then( (json) => {
-                        this.setState({name: json.name,age: json.age,nationality: json.nationality ,editing: 'Update',editid: i});
-						console.log(json);
-                    });
-			 
+		console.log(i);
+		fetch("/peoplefind/"+i).then( (response) => {
+		return response.json() }).then( (json) => {
+				this.setState({name: json.name,age: json.age,nationality: json.nationality ,editing: 'Update',editid: i});
+				console.log(json);
+		});
 	 }
 	 
-	 
-	 
-	 
-	
+
 	
  }
  
  
  	componentDidMount() {
-           fetch("/people")
-            .then( (response) => {
-                return response.json() })   
-                    .then( (json) => {
+           fetch("/people").then( (response) => {
+                return response.json() }).then( (json) => {
                         this.setState({members: json});
 						console.log(json);
                     });
@@ -71,9 +56,9 @@ class App extends Component {
 	}
 	
 	  handleSubmit(event) {
-		 event.preventDefault(); // alert('A name was submitted: ' + this.state.name);
+		 event.preventDefault();  
 			
-		if(this.state.editing=='Update' &&  this.state.editid!=''){
+		if(this.state.editing==='Update' &&  this.state.editid!==''){
 			return fetch('people/'+this.state.editid, {
 				 method: 'PUT',
 				 headers: {
@@ -81,10 +66,9 @@ class App extends Component {
 					'Content-Type': 'application/json'
 				  },
 				 body: JSON.stringify({name:this.state.name,age:this.state.age,nationality:this.state.nationality})
-			}) .then(
+			}).then(
 				 fetch("/people").then( (response) => {
-					return response.json() })   
-						.then( (json) => {
+					return response.json() }).then( (json) => {
 							this.setState({members: json,name: '',age: '',nationality: '',editing: 'Submit',editid: ''});
 							console.log(json);
 				 })
@@ -97,10 +81,9 @@ class App extends Component {
 					'Content-Type': 'application/json'
 				  },
 				 body: JSON.stringify({name:this.state.name,age:this.state.age,nationality:this.state.nationality})
-			}) .then(
+			}).then(
 				 fetch("/people").then( (response) => {
-					return response.json() })   
-						.then( (json) => {
+					return response.json() }).then( (json) => {
 							this.setState({members: json,name: '',age: '',nationality: '',editing: 'Submit'});
 							console.log(json);
 				 })
