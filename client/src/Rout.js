@@ -7,22 +7,22 @@ import App from './App';
 import './Style.css';
 
 
-class Rout extends Component {
+class  Rout extends Component {
    render() {
       return (
          <Router>
 				<div>
-				 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-				  <div class="container">
-					<a class="navbar-brand js-scroll-trigger" href="#page-top">MERN CURD</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-					  <span class="navbar-toggler-icon"></span>
+				 <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+				  <div className="container">
+					<a className="navbar-brand js-scroll-trigger" href="#page-top">MERN CURD</a>
+					<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					  <span className="navbar-toggler-icon"></span>
 					</button>
-					<div class="collapse navbar-collapse" id="navbarResponsive">
-					  <ul class="navbar-nav ml-auto">
-						   <li><Link to={'/'} class="nav-link js-scroll-trigger">Home</Link></li>
-						   <li><Link to={'/User'} class="nav-link js-scroll-trigger">User</Link></li>
-						   <li><Link to={'/About'} class="nav-link js-scroll-trigger">About</Link></li>
+					<div className="collapse navbar-collapse" id="navbarResponsive">
+					  <ul className="navbar-nav ml-auto">
+						   <li><Link to={'/'} className="nav-link js-scroll-trigger">Home</Link></li>
+						   <li><Link to={'/User'} className="nav-link js-scroll-trigger">User</Link></li>
+						   <li><Link to={'/About'} className="nav-link js-scroll-trigger">About</Link></li>
 					  </ul>
 					</div>
 				  </div>
@@ -30,9 +30,9 @@ class Rout extends Component {
 				 
 				   
 				    <section id="about">
-					  <div class="container">
-						<div class="row">
-						  <div class="col-lg-8 mx-auto">
+					  <div className="container">
+						<div className="row">
+						  <div className="col-lg-8 mx-auto">
 				   
 							   <Switch>
 								   <Route exact path='/' component={Home} />

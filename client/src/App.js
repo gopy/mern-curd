@@ -3,7 +3,7 @@ import React, { Component } from 'react';
  
  
 
-class App extends Component {
+class  App extends Component {
  constructor(props) {
 	super(props);
 	this.state = { members: [] ,name: '',age: '',nationality: '' ,editing: 'Submit' ,editid: ''};
@@ -95,32 +95,32 @@ class App extends Component {
  
  render() {
     return (
-       <div class="row">
+       <div className="row">
   
                 
-				<div class="col-lg-12">
-					<div class="panel panel-primary">
-						<div class="panel-heading">
+				<div className="col-lg-12">
+					<div className="panel panel-primary">
+						<div className="panel-heading">
 							Add Users
 						</div>
-						<div class="panel-body">
-							<div class="row">
-								<div class="col-lg-6">
+						<div className="panel-body">
+							<div className="row">
+								<div className="col-lg-6">
 									 <form onSubmit={this.handleSubmit}>
-									<div class="form-group">
-										<input class="form-control" placeholder="Name"  name="name"  value={this.state.name} onChange={this.handleChange} />
+									<div className="form-group">
+										<input className="form-control" placeholder="Name"  name="name"  value={this.state.name} onChange={this.handleChange} />
 									</div>
-									<div class="form-group">
-										<input class="form-control" placeholder="Age"  name="age"   value={this.state.age} onChange={this.handleChange} />
-									</div>
-									
-									
-									<div class="form-group">
-										<input class="form-control" placeholder="nationality" name="nationality"  value={this.state.nationality} onChange={this.handleChange}  />
+									<div className="form-group">
+										<input className="form-control" placeholder="Age"  name="age"   value={this.state.age} onChange={this.handleChange} />
 									</div>
 									
-									<button  type="submit" value="Submit"  class="btn btn-primary">{this.state.editing} </button> &nbsp;&nbsp;
-									<button    class="btn btn-primary"  onClick={(e) => this.clrRow( e)}>Clear </button>
+									
+									<div className="form-group">
+										<input className="form-control" placeholder="nationality" name="nationality"  value={this.state.nationality} onChange={this.handleChange}  />
+									</div>
+									
+									<button  type="submit" value="Submit"  className="btn btn-primary">{this.state.editing} </button> &nbsp;&nbsp;
+									<button    className="btn btn-primary"  onClick={(e) => this.clrRow( e)}>Clear </button>
 									</form>
 								</div>
 							</div>
@@ -134,9 +134,9 @@ class App extends Component {
 				
 				
 				
-				<div class="col-lg-12">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
+				<div className="col-lg-12">
+                    <div className="panel panel-primary">
+                        <div className="panel-heading">
                             Users
 							
 							
@@ -144,9 +144,9 @@ class App extends Component {
 							
                         </div>
                        
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
+                        <div className="panel-body">
+                            <div className="table-responsive">
+                                <table className="table table-bordered">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -166,8 +166,8 @@ class App extends Component {
                                             <td>{member.nationality}</td>
 											 <th>
 												
-												<button type="button" class="btn btn-warning btn-circle" onClick={(e) => this.editRow(member._id, e)}><i class="fa fa-pencil"></i>  </button>&nbsp;&nbsp;
-												<button type="button" class="btn btn-danger btn-circle" onClick={(e) => this.deleteRow(member._id, e)}><i class="fa fa-times"></i> </button>&nbsp;&nbsp;
+												<button type="button" className="btn btn-warning btn-circle" onClick={(e) => this.editRow(member._id, e)}><i className="fa fa-pencil"></i>  </button>&nbsp;&nbsp;
+												<button type="button" className="btn btn-danger btn-circle" onClick={(e) => this.deleteRow(member._id, e)}><i className="fa fa-times"></i> </button>&nbsp;&nbsp;
 												 
 											 
 											 </th>
